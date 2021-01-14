@@ -13,10 +13,6 @@ const AppProvider = ({ children }) => {
   const [IDholder, setIDHolder] = useState(null);
   const [alert, setAlert] = useState({ show: false, type: "", msg: "" });
 
-  useEffect(() => {
-    setPeople([firstPerson]);
-  }, []);
-
   const showAlert = (show = false, type = "", msg = "") => {
     setAlert({ show, type, msg });
   };
@@ -24,13 +20,15 @@ const AppProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //validation
     if (!age) {
       showAlert(true, "dangerous", "Please enter your enthnicity");
     } else if (!ethnicity) {
-      showAlert(true, "dangerous", "Please enter your icome");
+      showAlert(true, "dangerous", "Please enter your income");
     } else if (!income) {
       showAlert(true, "dangerous", "Please enter your age");
     } else {
+      //creating person
       let newPerson = {
         id: new Date().getTime().toString(),
         ethnicity: [ethnicity],
@@ -131,6 +129,10 @@ const AppProvider = ({ children }) => {
       })
     );
   };
+
+  useEffect(() => {
+    setPeople([firstPerson]);
+  }, []);
 
   return (
     <AppContext.Provider

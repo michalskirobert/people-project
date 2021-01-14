@@ -21,4 +21,12 @@ form {
     grid-template-columns: 75px 1fr;
     align-items: center;
   }
+  select {
+    background-image: $gradient-background;
+    padding: 0.5rem 0.9rem 0.5rem;
+    color: $color-light;
+    option {
+      background-color: $color-secondary;
+    }
+  }
 }
