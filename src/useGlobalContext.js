@@ -36,11 +36,11 @@ const AppProvider = ({ children }) => {
         age,
       };
       setPeople([...people, newPerson]);
+      setIsModalOpen(false);
     }
     setEthnicity("");
     setAge("");
     setIncome("");
-    setIsModalOpen(false);
     showAlert("", "", false);
   };
 
