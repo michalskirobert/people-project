@@ -1,28 +1,36 @@
 import React from "react";
 import { useGlobalContext } from "../useGlobalContext";
+import { ageData, incomeData } from "./data";
+import Alert from "./Alert";
 
 export const Form = () => {
   const {
     handleSubmit,
     ethnicity,
     setEthnicity,
-    income,
     setIncome,
     setAge,
-    age,
     setIsModalOpen,
+    alert,
+    showAlert,
   } = useGlobalContext();
 
   return (
     <form onSubmit={handleSubmit}>
+      {alert.show && <Alert />}
       <div className="form-control">
-        <label htmlFor="ethnicity">Age :</label>
-        <input
-          type="number"
-          id="age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        />
+        <label htmlFor="age">Age :</label>
+        <select id="age" onChange={(e) => setAge(e.target.value)}>
+          <option>Choose age...</option>
+          {ageData.map((income, index) => {
+            const { age } = income;
+            return (
+              <option value={age} key={index}>
+                {age}
+              </option>
+            );
+          })}
+        </select>
       </div>
       <div className="form-control">
         <label htmlFor="ethnicity">Ethnicity</label>
@@ -31,22 +39,34 @@ export const Form = () => {
           id="ethnicity"
           value={ethnicity}
           onChange={(e) => setEthnicity(e.target.value)}
+          placeholder="E.g. Asian"
         />
       </div>
       <div className="form-control">
         <label htmlFor="income">Yearly income :</label>
-        <input
-          type="text"
-          id="income"
-          value={income}
-          onChange={(e) => setIncome(e.target.value)}
-        />
+        <select onChange={(e) => setIncome(e.target.value)}>
+          <option>Choose yearly income...</option>
+          {incomeData.map((income, index) => {
+            const { amount } = income;
+            return (
+              <option value={amount} key={index}>
+                {amount}
+              </option>
+            );
+          })}
+        </select>
       </div>
       <div className="buttons__container">
         <button type="submit" className="btn confirm">
           Add
         </button>
-        <button className="btn cancel" onClick={() => setIsModalOpen(false)}>
+        <button
+          className="btn cancel"
+          onClick={() => {
+            showAlert(false, "", "");
+            setIsModalOpen(false);
+          }}
+        >
           Cancel
         </button>
       </div>
@@ -61,9 +81,12 @@ export const EthnicityForm = () => {
     setIsUpdating,
     setIsModalOpen,
     addEthHandle,
+    alert,
+    showAlert,
   } = useGlobalContext();
   return (
     <form onSubmit={addEthHandle}>
+      {alert.show && <Alert />}
       <div className="form-control">
         <label htmlFor="ethnicity">Ethnicty :</label>
         <input
@@ -71,6 +94,7 @@ export const EthnicityForm = () => {
           id="ethnicity"
           value={ethnicity}
           onChange={(e) => setEthnicity(e.target.value)}
+          placeholder="E.g. Asian"
         />
       </div>
       <div className="buttons__container">
@@ -82,6 +106,7 @@ export const EthnicityForm = () => {
           onClick={() => {
             setIsModalOpen(false);
             setIsUpdating(false);
+            showAlert(false, "", "");
           }}
         >
           Cancel

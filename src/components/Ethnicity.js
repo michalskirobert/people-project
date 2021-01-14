@@ -37,7 +37,7 @@ const Ethnicity = () => {
                 {age && (
                   <li>
                     <div className="box age__container" data-dot={dot}>
-                      <h2>Age: {age}+</h2>
+                      <h2>Age: {age}</h2>
                       <button
                         className="btn remove"
                         onClick={() => removeAge(id)}
@@ -106,7 +106,7 @@ const Ethnicity = () => {
                       className="box income-yearly__container"
                       data-dot={dot}
                     >
-                      <h3>Income yearly {income} USD+</h3>
+                      <h3>Income yearly {income}</h3>
                       <button
                         className="btn remove"
                         onClick={() => removeIncome(id)}

@@ -1,5 +1,6 @@
 form {
   label {
+    font-family: $font-secondary;
     color: $color-default;
     font-weight: 700;
   }
@@ -7,6 +8,12 @@ form {
     min-width: 50%;
     max-width: 100%;
     padding: 0.5rem 1rem 0.5rem;
+    &:placeholder-shown {
+      font-family: $font-secondary;
+      font-weight: 900;
+      color: $color-dim;
+      font-size: 0.6rem;
+    }
   }
   .form-control {
     margin: 0.5rem 0;

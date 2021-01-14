@@ -11,40 +11,63 @@ const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
   const [IDholder, setIDHolder] = useState(null);
+  const [alert, setAlert] = useState({ show: false, type: "", msg: "" });
 
   useEffect(() => {
     setPeople([firstPerson]);
   }, []);
 
+  const showAlert = (show = false, type = "", msg = "") => {
+    setAlert({ show, type, msg });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    let newPerson = {
-      id: new Date().getTime().toString(),
-      ethnicity: [ethnicity],
-      income,
-      age,
-    };
-    setPeople([...people, newPerson]);
-    setEthnicity("");
-    setAge("");
-    setIncome("");
-    setIsModalOpen(false);
+
+    if (!age) {
+      showAlert(true, "dangerous", "Please enter your enthnicity");
+    } else if (!ethnicity) {
+      showAlert(true, "dangerous", "Please enter your icome");
+    } else if (!income) {
+      showAlert(true, "dangerous", "Please enter your age");
+    } else {
+      let newPerson = {
+        id: new Date().getTime().toString(),
+        ethnicity: [ethnicity],
+        income,
+        age,
+      };
+
+      setPeople([...people, newPerson]);
+      setEthnicity("");
+      setAge("");
+      setIncome("");
+      setIsModalOpen(false);
+      showAlert("", "", false);
+    }
   };
 
   const addEthHandle = (e) => {
     e.preventDefault();
-    setPeople(
-      people.map((person) => {
-        if (person.id === IDholder) {
-          return {
-            ...person,
-            ethnicity: [...person.ethnicity, ethnicity],
-          };
-        }
-        return person;
-      })
-    );
-    setIsUpdating(false);
+
+    if (!ethnicity) {
+      showAlert(true, "dangerous", "Please enter your enthnicity");
+    } else {
+      setPeople(
+        people.map((person) => {
+          if (person.id === IDholder) {
+            return {
+              ...person,
+              ethnicity: [...person.ethnicity, ethnicity],
+            };
+          }
+          return person;
+        })
+      );
+      showAlert(false, "", "");
+      setEthnicity("");
+      setIsUpdating(false);
+    }
   };
 
   const updateEthnicity = (id) => {
@@ -53,7 +76,7 @@ const AppProvider = ({ children }) => {
   };
 
   const removeAge = (id) => {
-    return setPeople(
+    setPeople(
       people.map((person) => {
         if (person.id === id) {
           return {
@@ -128,6 +151,8 @@ const AppProvider = ({ children }) => {
         removeEthnicity,
         removeEthnicityCell,
         removeIncome,
+        alert,
+        showAlert,
       }}
     >
       {children}
