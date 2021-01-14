@@ -42,8 +42,12 @@ export const Form = () => {
         />
       </div>
       <div className="buttons__container">
-        <button type="submit">Add</button>
-        <button onClick={() => setIsModalOpen(false)}>Cancel</button>
+        <button type="submit" className="btn confirm">
+          Add
+        </button>
+        <button className="btn cancel" onClick={() => setIsModalOpen(false)}>
+          Cancel
+        </button>
       </div>
     </form>
   );
@@ -69,8 +73,11 @@ export const EthnicityForm = () => {
         />
       </div>
       <div className="buttons__container">
-        <button type="submit">Add</button>
+        <button type="submit" className="btn confirm">
+          Add
+        </button>
         <button
+          className="btn cancel"
           onClick={() => {
             setIsModalOpen(false);
             setIsUpdating(false);

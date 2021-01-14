@@ -9,36 +9,8 @@
 }
 
 body {
-  background: $background;
+  background: $color-light;
   font-size: 16px;
-}
-
-p {
-  font-weight: 300;
-}
-
-a {
-  color: $color-dim;
-  text-decoration: none;
-  text-transform: uppercase;
-  display: block;
-  letter-spacing: 0.3em;
-  font-size: 0.6em;
-  font-weight: 400;
-  background: #252727;
-  padding: 0.3rem 1rem;
-  margin: 1.9rem 0 0 0;
-  float: right;
-}
-
-a:hover {
-  color: $color-light;
-  background: $color-primary;
-  border-bottom: 0.35em solid black;
-}
-
-strong {
-  font-weight: 600;
 }
 
 .headling {

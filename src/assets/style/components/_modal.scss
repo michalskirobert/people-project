@@ -6,6 +6,7 @@
   right: 0;
   bottom: 0;
   z-index: 255;
+  padding: 2rem;
   .modal__content {
     background-color: #fff;
     max-width: 500px;
@@ -18,9 +19,5 @@
     top: 50%;
     position: relative;
     transform: translate(0, -50%);
-  }
-  button {
-    justify-self: flex-end;
-    margin: 0 15px 30px 15px;
   }
 }

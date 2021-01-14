@@ -7,7 +7,7 @@ const AppProvider = ({ children }) => {
   const [people, setPeople] = useState([]);
   const [ethnicity, setEthnicity] = useState("");
   const [income, setIncome] = useState("");
-  const [age, setAge] = useState(0);
+  const [age, setAge] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isUpdating, setIsUpdating] = useState(false);
   const [IDholder, setIDHolder] = useState(null);
@@ -26,7 +26,8 @@ const AppProvider = ({ children }) => {
     };
     setPeople([...people, newPerson]);
     setEthnicity("");
-    setAge(0);
+    setAge("");
+    setIncome("");
     setIsModalOpen(false);
   };
 
