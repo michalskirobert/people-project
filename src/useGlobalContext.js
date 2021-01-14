@@ -22,7 +22,7 @@ const AppProvider = ({ children }) => {
 
     //validation
     if (!age) {
-      showAlert(true, "dangerous", "Please enter your enthnicity");
+      showAlert(true, "dangerous", "Please enter your ethnicity");
     } else if (!ethnicity) {
       showAlert(true, "dangerous", "Please enter your income");
     } else if (!income) {
@@ -49,7 +49,7 @@ const AppProvider = ({ children }) => {
     e.preventDefault();
 
     if (!ethnicity) {
-      showAlert(true, "dangerous", "Please enter your enthnicity");
+      showAlert(true, "dangerous", "Please enter your ethnicity");
     } else {
       setPeople(
         people.map((person) => {
