@@ -20,6 +20,9 @@ const AppProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    //clearing
+    showAlert("", "", false);
+
     //validation
     if (!age) {
       showAlert(true, "dangerous", "Please enter your age");
@@ -36,17 +39,20 @@ const AppProvider = ({ children }) => {
         age,
       };
       setPeople([...people, newPerson]);
+      setEthnicity("");
+      setAge("");
+      setIncome("");
       setIsModalOpen(false);
     }
-    setEthnicity("");
-    setAge("");
-    setIncome("");
-    showAlert("", "", false);
   };
 
   const addEthHandle = (e) => {
     e.preventDefault();
 
+    //clearing
+    showAlert(false, "", "");
+
+    //validation
     if (!ethnicity) {
       showAlert(true, "dangerous", "Please enter your ethnicity");
     } else {
@@ -61,7 +67,6 @@ const AppProvider = ({ children }) => {
           return person;
         })
       );
-      showAlert(false, "", "");
       setEthnicity("");
       setIsUpdating(false);
     }

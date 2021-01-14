@@ -63,7 +63,6 @@ export const Form = () => {
         <button
           className="btn cancel"
           onClick={() => {
-            showAlert(false, "", "");
             setIsModalOpen(false);
           }}
         >
@@ -106,7 +105,6 @@ export const EthnicityForm = () => {
           onClick={() => {
             setIsModalOpen(false);
             setIsUpdating(false);
-            showAlert(false, "", "");
           }}
         >
           Cancel
