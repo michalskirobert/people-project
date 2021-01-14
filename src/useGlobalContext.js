@@ -22,11 +22,11 @@ const AppProvider = ({ children }) => {
 
     //validation
     if (!age) {
-      showAlert(true, "dangerous", "Please enter your ethnicity");
-    } else if (!ethnicity) {
-      showAlert(true, "dangerous", "Please enter your income");
-    } else if (!income) {
       showAlert(true, "dangerous", "Please enter your age");
+    } else if (!ethnicity) {
+      showAlert(true, "dangerous", "Please enter your ethnicity");
+    } else if (!income) {
+      showAlert(true, "dangerous", "Please enter your income");
     } else {
       //creating person
       let newPerson = {
@@ -35,14 +35,13 @@ const AppProvider = ({ children }) => {
         income,
         age,
       };
-
       setPeople([...people, newPerson]);
-      setEthnicity("");
-      setAge("");
-      setIncome("");
-      setIsModalOpen(false);
-      showAlert("", "", false);
     }
+    setEthnicity("");
+    setAge("");
+    setIncome("");
+    setIsModalOpen(false);
+    showAlert("", "", false);
   };
 
   const addEthHandle = (e) => {
