@@ -106,7 +106,7 @@ const Ethnicity = () => {
                       className="box income-yearly__container"
                       data-dot={dot}
                     >
-                      <h3>Income yearly {income}</h3>
+                      <h3>Income yearly {income} USD+</h3>
                       <button
                         className="btn remove"
                         onClick={() => removeIncome(id)}
