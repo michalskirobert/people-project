@@ -12,6 +12,7 @@ export const Form = () => {
     age,
     setIsModalOpen,
   } = useGlobalContext();
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="form-control">

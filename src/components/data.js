@@ -14,6 +14,6 @@ export const income = [
 export const firstPerson = {
   id: 1,
   age: 40,
-  ethnicity: ["black", "hispanic"],
+  ethnicity: ["Black", "Hispanic"],
   income: "45k USD+",
 };

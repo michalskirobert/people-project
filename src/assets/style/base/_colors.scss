@@ -2,10 +2,18 @@ $color-default: #252827;
 $color-light: #fff;
 
 $color-primary: #004ffc;
-$color-dim: #6c6d6d;
+$color-dim: #b6b4b4;
 $color-line: #ddd9d9;
 $color-remove: #ee6181;
-$color-add: #51ecc8;
+$color-add: linear-gradient(
+  to top,
+  #51ecc8,
+  #5ceec0,
+  #67efb8,
+  #74f1af,
+  #80f2a6
+);
+$color-add-base: #51ecc8;
 
 $gradient-background: linear-gradient(
   to bottom,

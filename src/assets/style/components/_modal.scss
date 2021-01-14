@@ -10,7 +10,7 @@
   .modal__content {
     background-color: #fff;
     max-width: 500px;
-    min-height: 500px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,5 +19,6 @@
     top: 50%;
     position: relative;
     transform: translate(0, -50%);
+    padding: 2rem;
   }
 }

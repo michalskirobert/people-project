@@ -15,15 +15,15 @@
 }
 
 .add {
-  color: $color-add;
+  color: $color-add-base;
   margin-left: 2.2rem;
   background-color: $color-light;
 }
 
 .add-person {
   color: $color-light;
-  background-color: $color-add;
-  box-shadow: 0 4px 8px $color-add;
+  background-image: $color-add;
+  box-shadow: 0 4px 8px $color-add-base;
   font-size: 3rem;
   margin-left: -0.2rem;
   z-index: 5;
@@ -31,6 +31,7 @@
   border-radius: 100%;
   height: 100%;
   width: fit-content;
+  margin-top: 3rem;
 }
 
 .buttons__container {
@@ -42,7 +43,7 @@
 
 .btn.confirm {
   color: $color-light;
-  background-color: $color-add;
+  background-image: $color-add;
   padding: 0.3rem 2rem 0.3rem;
   font-size: 1rem;
 }
