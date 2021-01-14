@@ -1,0 +1,89 @@
+@import "./sizes", "./colors", "./fonts";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: $background;
+  font-size: 16px;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  color: $color-dim;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  letter-spacing: 0.3em;
+  font-size: 0.6em;
+  font-weight: 400;
+  background: #252727;
+  padding: 0.3rem 1rem;
+  margin: 1.9rem 0 0 0;
+  float: right;
+}
+
+a:hover {
+  color: $color-light;
+  background: $color-primary;
+  border-bottom: 0.35em solid black;
+}
+
+strong {
+  font-weight: 600;
+}
+
+.headling {
+  position: absolute;
+  left: ((($data * 0.6) + $spacing + $line) * 1) * -1;
+  color: fade($color-light, 40%);
+  text-align: right;
+  font-weight: 100;
+  font-size: 0.9em;
+  min-width: $data;
+  font-family: $font-primary;
+  top: -25px;
+}
+
+.timeline-content {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: $font-primary;
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  font-size: 1.2em;
+  font-weight: 600;
+  padding: 1rem 5rem 1rem;
+  color: $color-light;
+  width: fit-content;
+  background-image: $gradient-background;
+  border-radius: 0.5rem;
+}
+
+h2,
+h3,
+h4 {
+  font-family: $font-primary;
+  font-weight: 800;
+  font-size: 1.1em;
+  margin-left: 0.2rem;
+  word-break: break-word;
+}

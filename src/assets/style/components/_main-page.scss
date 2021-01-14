@@ -1,0 +1,188 @@
+.people__container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 2rem 2rem;
+  .people__headling {
+    margin-right: 50px;
+    margin-bottom: 3.5rem;
+  }
+
+  ul.people {
+    margin-top: 30px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 1px !important;
+      height: 100%;
+      background: #c7cacb;
+      position: absolute;
+      left: 32px;
+      top: 0;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: #c7cacb;
+      bottom: 0;
+      left: 27px;
+      width: 7px;
+      height: 7px;
+      border: 3px solid #dee1e3;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  }
+  .person__container {
+    padding-left: 88px;
+    clear: both;
+    margin-top: 15px;
+    & > li {
+      margin-bottom: 15px;
+      display: block;
+      position: relative;
+      &::before {
+        content: "";
+        width: 60px;
+        height: 1px !important;
+        background: #c7cacb;
+        position: absolute;
+        top: 50%;
+        left: -55px;
+        z-index: -1;
+      }
+    }
+    li {
+      .centered {
+        display: flex;
+        flex-flow: row wrap;
+        margin-bottom: 1rem;
+        .ethnicity__title {
+          border: 1px solid #ddd9d9;
+          padding: 0.8rem 1rem 0.8rem;
+          margin-left: 1rem;
+          background-color: #fff;
+        }
+      }
+      .ethnicity__container {
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      ul.ethnicity {
+        position: relative;
+        z-index: 5;
+        &::before {
+          content: "";
+          width: 1px !important;
+          height: 100%;
+          background: #c7cacb;
+          position: absolute;
+          left: 50px;
+          top: 0;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+ul.ethnicity__list {
+  .ethnicity__item {
+    position: relative;
+    &::after {
+      position: absolute;
+      left: ((($data * 0.9) + $spacing + $line) * 1) * -1;
+      content: attr(data-dot);
+      text-align: right;
+      font-weight: 100;
+      font-size: 0.9em;
+      min-width: $data;
+      font-family: $font-primary;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  li {
+    position: relative;
+    margin-bottom: 15px;
+    display: block;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 1px !important;
+      background: #c7cacb;
+      position: absolute;
+      top: 25px;
+      left: 3.2rem;
+      z-index: -2;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  box-shadow: 4px 4px 8px $color-line;
+  padding: 0.9rem 1rem 0.9rem;
+  position: relative;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  align-items: center;
+  &::before {
+    position: absolute;
+    left: ((($data * 0.6) + $spacing + $line) * 1.5) * -1;
+    color: fade($color-light, 40%);
+    content: attr(data-dot);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: $data;
+    font-family: $font-primary;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  &:after {
+    content: "\A0";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: $gradient-background;
+    max-width: 30%;
+    height: 100%;
+    padding-left: 0.2rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+}
+
+.ethnicity__item {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd9d9;
+  padding: 0.5rem 0.3rem 0.5rem;
+  max-width: 250px;
+  margin-left: 4.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .people__container {
+    width: 768px;
+  }
+  .ethnicity__title {
+    min-width: 250px;
+    max-width: 300px;
+  }
+  .centered {
+    button {
+      margin-left: 1.5rem;
+    }
+  }
+  .people__headling {
+    margin-left: -17%;
+  }
+}
